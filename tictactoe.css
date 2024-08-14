@@ -1,0 +1,147 @@
+/* General styles */
+body {
+  font-family: "Arial", sans-serif;
+  background: #6482AD;
+  /* #f0f8ff */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.game-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background-color: #7FA1C3;
+  padding: 20px;
+  width: 300px;
+  position: relative;
+  z-index: 1;/* Ensures that the game content is above the confetti */
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 5px;
+}
+
+.square {
+  background-color: #E2DAD6;
+  border: 2px solid #00796b;
+  border-radius: 8px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #134B70;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.square:hover {
+  background-color: #F5EDED;
+  transform: scale(1.05);
+}
+
+.square:active {
+  transform: scale(0.95);
+}
+
+.winning {
+  background-color: #6482AD;
+  border: 2px solid #4e6585;
+  color: #134B70;
+}
+
+.tick {
+  font-size: 2.5rem;
+}
+
+.cross {
+  font-size: 2.5rem;
+}
+
+.game-info {
+  margin-top: 20px;
+  text-align: center;
+  color: #134B70;
+}
+
+.status {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #6482AD;
+  color: #E2DAD6;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #4c6486;
+  transform: scale(1.1);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.scores p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.scores .tick {
+  font-size: 1.2rem;
+  color: #134B70;
+}
+
+.scores .cross {
+  font-size: 1.2rem;
+  color:#134B70 ;
+}
+
+/* Add this new style */
+.confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;* Make sure it is below other elements */
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
